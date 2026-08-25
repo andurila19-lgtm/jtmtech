@@ -38,32 +38,36 @@ Each element is well presented in a very complex documentation. You can read
 more about the <a href="https://horizon-ui.com/documentation/docs/introduction?ref=readme-horizon-nextjs" target="_blank">documentation
 here.</a>
 
-### Quick Start
+# JTM TECH - Platform Bengkel Motor & Toko Sparepart ⚡️
 
-Install Horizon UI by running either of the following:
+Platform website modern terintegrasi untuk bengkel otomotif, booking servis motor online, dan katalog suku cadang original.
 
-- Install NodeJS LTS from [NodeJs Official Page](https://nodejs.org/en/?ref=horizon-documentation)
-  (NOTE: Product only works with LTS version)
+---
 
-- Install Yarn CLI from [Yarn Official Page](https://yarnpkg.com/cli/install?ref=horizon-documentation)
+### Panduan Menjalankan Proyek (Quick Start)
 
-Clone the repository with the following command:
+1. **Instalasi Dependensi**:
+   ```bash
+   npm install --loglevel=error
+   ```
+   *(Menyertakan `--loglevel=error` menyembunyikan notifikasi deprecated minor dari paket pihak ketiga yang sudah tidak aktif dipertahankan oleh author aslinya).*
 
-```bash
-git clone https://github.com/horizon-ui/horizon-ui-chakra-nextjs.git
-```
+2. **Jalankan Server Development**:
+   ```bash
+   npm run dev
+   ```
+   Buka browser di [http://localhost:3000](http://localhost:3000)
 
-Run in terminal this command:
+3. **Build Produksi**:
+   ```bash
+   npm run build
+   ```
 
-```bash
-yarn install
-```
+4. **Menjalankan Server Produksi**:
+   ```bash
+   npm start
+   ```
 
-Then run this command to start your local server
-
-```bash
-yarn dev
-```
 
 ### Example Pages
 
