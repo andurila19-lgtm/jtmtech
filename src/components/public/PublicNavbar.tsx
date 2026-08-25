@@ -93,29 +93,29 @@ export default function PublicNavbar() {
       <GlobalSearchModal />
 
       {/* Top Banner Info Bar */}
-      <Box bg="navy.900" color="whiteAlpha.800" py="6px" px={{ base: '16px', md: '30px' }} fontSize="12px">
+      <Box bg="navy.900" color="whiteAlpha.800" py="6px" px={{ base: '12px', md: '30px' }} fontSize="12px">
         <Flex justify="space-between" align="center" maxW="1280px" mx="auto">
-          <HStack spacing={{ base: '12px', md: '20px' }}>
-            <HStack spacing="6px">
+          <HStack spacing={{ base: '8px', md: '20px' }}>
+            <HStack spacing="6px" display={{ base: 'none', md: 'flex' }}>
               <Icon as={MdLocationOn} color="brand.400" />
-              <Text noOfLines={1} display={{ base: 'none', sm: 'block' }}>
+              <Text noOfLines={1}>
                 {settings.businessInfo.address}, {settings.businessInfo.city}
               </Text>
             </HStack>
             <HStack spacing="6px">
               <Icon as={MdPhone} color="green.400" />
-              <Text>{settings.businessInfo.phone}</Text>
+              <Text fontSize={{ base: '11px', md: '12px' }}>{settings.businessInfo.phone}</Text>
             </HStack>
           </HStack>
 
-          <HStack spacing="14px">
-            <Text fontSize="11.5px" color="gray.400" display={{ base: 'none', md: 'block' }}>
+          <HStack spacing={{ base: '8px', md: '14px' }}>
+            <Text fontSize="11.5px" color="gray.400" display={{ base: 'none', lg: 'block' }}>
               Buka: {settings.businessInfo.openingHours.weekdays}
             </Text>
             <Link href="/admin/default">
               <HStack spacing="4px" _hover={{ color: 'brand.400' }} transition="0.2s">
                 <Icon as={MdDashboard} />
-                <Text fontWeight="700">Admin Portal</Text>
+                <Text fontWeight="700" fontSize={{ base: '11px', md: '12px' }}>Admin Portal</Text>
               </HStack>
             </Link>
           </HStack>
@@ -132,16 +132,16 @@ export default function PublicNavbar() {
         backdropFilter="blur(12px)"
         borderBottom="1px solid"
         borderColor={borderColor}
-        py="12px"
-        px={{ base: '16px', md: '30px' }}
+        py={{ base: '10px', md: '12px' }}
+        px={{ base: '12px', md: '30px' }}
       >
         <Flex align="center" justify="space-between" maxW="1280px" mx="auto">
           {/* Logo & Brand Name */}
           <Link href="/">
-            <HStack spacing="10px">
+            <HStack spacing={{ base: '8px', md: '10px' }}>
               <Box
-                w="38px"
-                h="38px"
+                w={{ base: '32px', md: '38px' }}
+                h={{ base: '32px', md: '38px' }}
                 borderRadius="10px"
                 bg="linear-gradient(135deg, #7551FF 0%, #422AFB 100%)"
                 display="flex"
@@ -149,14 +149,15 @@ export default function PublicNavbar() {
                 justifyContent="center"
                 color="white"
                 boxShadow="0 4px 12px rgba(66, 42, 251, 0.3)"
+                flexShrink={0}
               >
-                <Icon as={MdTwoWheeler} w="22px" h="22px" />
+                <Icon as={MdTwoWheeler} w={{ base: '18px', md: '22px' }} h={{ base: '18px', md: '22px' }} />
               </Box>
               <Box>
-                <Text fontSize="17px" fontWeight="900" letterSpacing="-0.5px" color={textColor} lineHeight="1.1">
+                <Text fontSize={{ base: '15px', md: '17px' }} fontWeight="900" letterSpacing="-0.5px" color={textColor} lineHeight="1.1">
                   JTM TECH
                 </Text>
-                <Text fontSize="10.5px" fontWeight="700" color="brand.500" letterSpacing="1px" textTransform="uppercase">
+                <Text fontSize={{ base: '9px', md: '10.5px' }} fontWeight="700" color="brand.500" letterSpacing="0.5px" textTransform="uppercase" display={{ base: 'none', sm: 'block' }}>
                   Bengkel & Suku Cadang
                 </Text>
               </Box>
@@ -197,28 +198,28 @@ export default function PublicNavbar() {
           </HStack>
 
           {/* Right Action Icons & Primary CTA */}
-          <HStack spacing={{ base: '8px', md: '12px' }}>
+          <HStack spacing={{ base: '4px', sm: '8px', md: '12px' }}>
             {/* Search Icon */}
             <IconButton
               aria-label="Cari Suku Cadang"
-              icon={<MdSearch size={22} />}
+              icon={<MdSearch size={20} />}
               variant="ghost"
-              borderRadius="12px"
+              borderRadius="10px"
               onClick={openSearch}
               color={textColor}
-              size="md"
+              size={{ base: 'sm', md: 'md' }}
             />
 
             {/* Cart Icon with Live Badge */}
             <Box position="relative">
               <IconButton
                 aria-label="Keranjang Belanja"
-                icon={<MdShoppingCart size={20} />}
+                icon={<MdShoppingCart size={19} />}
                 variant="ghost"
-                borderRadius="12px"
+                borderRadius="10px"
                 onClick={openCartDrawer}
                 color={textColor}
-                size="md"
+                size={{ base: 'sm', md: 'md' }}
               />
               {cartCount > 0 && (
                 <Badge
@@ -227,9 +228,9 @@ export default function PublicNavbar() {
                   right="-2px"
                   colorScheme="purple"
                   borderRadius="full"
-                  px="6px"
-                  py="2px"
-                  fontSize="11px"
+                  px="5px"
+                  py="1px"
+                  fontSize="10px"
                   fontWeight="800"
                   boxShadow="0 2px 5px rgba(0,0,0,0.2)"
                 >
@@ -243,7 +244,7 @@ export default function PublicNavbar() {
               <Menu>
                 <MenuButton>
                   <Avatar
-                    size="sm"
+                    size={{ base: 'xs', sm: 'sm' }}
                     name={customer.name}
                     src={customer.avatar}
                     cursor="pointer"
@@ -299,7 +300,7 @@ export default function PublicNavbar() {
                   variant="outline"
                   borderRadius="10px"
                   fontSize="13px"
-                  display={{ base: 'none', sm: 'inline-flex' }}
+                  display={{ base: 'none', lg: 'inline-flex' }}
                 >
                   Masuk
                 </Button>
@@ -316,7 +317,7 @@ export default function PublicNavbar() {
                 h="40px"
                 px="16px"
                 fontWeight="800"
-                display={{ base: 'none', sm: 'inline-flex' }}
+                display={{ base: 'none', lg: 'inline-flex' }}
                 boxShadow="0 4px 14px rgba(66, 42, 251, 0.25)"
               >
                 Booking Servis
@@ -326,12 +327,12 @@ export default function PublicNavbar() {
             {/* Mobile Menu Toggle */}
             <IconButton
               aria-label="Buka Menu"
-              icon={<MdMenu size={24} />}
+              icon={<MdMenu size={22} />}
               variant="outline"
-              borderRadius="12px"
+              borderRadius="10px"
               onClick={openMenu}
               display={{ base: 'inline-flex', lg: 'none' }}
-              size="md"
+              size={{ base: 'sm', md: 'md' }}
             />
           </HStack>
         </Flex>

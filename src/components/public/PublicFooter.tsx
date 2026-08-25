@@ -38,7 +38,7 @@ export default function PublicFooter() {
   const borderColor = 'whiteAlpha.100';
 
   return (
-    <Box as="footer" bg={bg} color={textColor} pt="60px" pb="30px" borderTop="1px solid" borderColor={borderColor}>
+    <Box as="footer" bg={bg} color={textColor} pt="60px" pb={{ base: '90px', md: '30px' }} borderTop="1px solid" borderColor={borderColor}>
       <Box maxW="1280px" mx="auto" px={{ base: '20px', md: '30px' }}>
         {/* Value Proposition Bar */}
         <SimpleGrid columns={{ base: 1, md: 3 }} gap="20px" pb="40px" mb="40px" borderBottom="1px solid" borderColor={borderColor}>

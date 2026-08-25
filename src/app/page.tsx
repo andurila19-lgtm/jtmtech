@@ -157,7 +157,7 @@ export default function HomePage() {
 
               <Heading
                 as="h1"
-                fontSize={{ base: '30px', sm: '38px', md: '48px' }}
+                fontSize={{ base: '26px', sm: '36px', md: '48px' }}
                 fontWeight="900"
                 lineHeight="1.15"
                 letterSpacing="-1px"
@@ -170,19 +170,20 @@ export default function HomePage() {
                 , Ditangani Profesional.
               </Heading>
 
-              <Text fontSize={{ base: '14.5px', md: '16px' }} color="gray.300" mb="26px" lineHeight="1.6" maxW="540px">
+              <Text fontSize={{ base: '13.5px', md: '16px' }} color="gray.300" mb="24px" lineHeight="1.6" maxW="540px">
                 Percayakan perawatan motor Anda kepada teknisi bersertifikat. Nikmati kemudahan booking jadwal servis tanpa antre dan pesan suku cadang asli bergaransi langsung secara online.
               </Text>
 
-              <HStack spacing="14px" flexWrap="wrap">
-                <Link href="/booking">
+              <Flex direction={{ base: 'column', sm: 'row' }} gap="12px" w="100%">
+                <Link href="/booking" style={{ width: '100%' }}>
                   <Button
                     size="lg"
+                    w={{ base: '100%', sm: 'auto' }}
                     colorScheme="purple"
                     leftIcon={<MdBuild />}
-                    h="52px"
+                    h={{ base: '48px', md: '52px' }}
                     px="24px"
-                    fontSize="15px"
+                    fontSize={{ base: '14px', md: '15px' }}
                     fontWeight="800"
                     borderRadius="14px"
                     boxShadow="0 4px 20px rgba(66, 42, 251, 0.4)"
@@ -191,56 +192,57 @@ export default function HomePage() {
                   </Button>
                 </Link>
 
-                <Link href="/shop">
+                <Link href="/shop" style={{ width: '100%' }}>
                   <Button
                     size="lg"
+                    w={{ base: '100%', sm: 'auto' }}
                     variant="outline"
                     color="white"
                     borderColor="whiteAlpha.400"
                     _hover={{ bg: 'whiteAlpha.200' }}
                     leftIcon={<MdShoppingCart />}
-                    h="52px"
+                    h={{ base: '48px', md: '52px' }}
                     px="24px"
-                    fontSize="15px"
+                    fontSize={{ base: '14px', md: '15px' }}
                     borderRadius="14px"
                   >
                     Lihat Katalog Sparepart
                   </Button>
                 </Link>
-              </HStack>
+              </Flex>
 
               {/* Mini Quick Stats */}
-              <HStack spacing="24px" mt="32px" pt="24px" borderTop="1px solid" borderColor="whiteAlpha.200">
+              <SimpleGrid columns={3} gap={{ base: '8px', sm: '16px', md: '24px' }} mt="28px" pt="20px" borderTop="1px solid" borderColor="whiteAlpha.200">
                 <Box>
-                  <Text fontSize="20px" fontWeight="900" color="white">
+                  <Text fontSize={{ base: '16px', sm: '18px', md: '20px' }} fontWeight="900" color="white">
                     4.9 / 5.0
                   </Text>
-                  <HStack spacing="2px" color="orange.400">
+                  <HStack spacing="2px" color="orange.400" display={{ base: 'none', sm: 'flex' }}>
                     {[1, 2, 3, 4, 5].map((i) => (
-                      <Icon as={MdStar} key={i} w="14px" h="14px" />
+                      <Icon as={MdStar} key={i} w="13px" h="13px" />
                     ))}
                   </HStack>
-                  <Text fontSize="11px" color="gray.400">
-                    500+ Ulasan Pelanggan
+                  <Text fontSize={{ base: '10px', sm: '11px' }} color="gray.400">
+                    500+ Ulasan
                   </Text>
                 </Box>
                 <Box>
-                  <Text fontSize="20px" fontWeight="900" color="brand.400">
+                  <Text fontSize={{ base: '16px', sm: '18px', md: '20px' }} fontWeight="900" color="brand.400">
                     100% Asli
                   </Text>
-                  <Text fontSize="11px" color="gray.400">
-                    Garansi Suku Cadang Original
+                  <Text fontSize={{ base: '10px', sm: '11px' }} color="gray.400">
+                    Garansi Suku Cadang
                   </Text>
                 </Box>
                 <Box>
-                  <Text fontSize="20px" fontWeight="900" color="green.400">
+                  <Text fontSize={{ base: '16px', sm: '18px', md: '20px' }} fontWeight="900" color="green.400">
                     30 Menit
                   </Text>
-                  <Text fontSize="11px" color="gray.400">
+                  <Text fontSize={{ base: '10px', sm: '11px' }} color="gray.400">
                     Servis Cepat Selesai
                   </Text>
                 </Box>
-              </HStack>
+              </SimpleGrid>
             </Box>
 
             {/* Right Hero Image Card */}
@@ -715,9 +717,13 @@ export default function HomePage() {
                 <Button
                   colorScheme="purple"
                   w="100%"
-                  h="48px"
+                  minH="48px"
+                  h="auto"
+                  py="12px"
+                  whiteSpace="normal"
                   borderRadius="12px"
                   fontWeight="800"
+                  fontSize={{ base: '13px', sm: '14px' }}
                   leftIcon={<MdSearch />}
                   onClick={handleSearchCompatibleParts}
                 >

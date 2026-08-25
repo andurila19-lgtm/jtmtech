@@ -7,11 +7,16 @@ import { ChakraProvider } from '@chakra-ui/react';
 import theme from '../theme/theme';
 
 import { StoreProvider } from 'contexts/StoreContext';
+import PublicMobileBottomNav from 'components/navigation/PublicMobileBottomNav';
 
 export default function AppWrappers({ children }: { children: ReactNode }) {
   return (
     <ChakraProvider theme={theme}>
-      <StoreProvider>{children}</StoreProvider>
+      <StoreProvider>
+        {children}
+        <PublicMobileBottomNav />
+      </StoreProvider>
     </ChakraProvider>
   );
 }
+
