@@ -32,7 +32,7 @@ export default function AdminNavbar (props: {
         window.removeEventListener('scroll', changeNavbar)
       }
     }
-  })
+  }, [])
 
   const { secondary, message, brandText, fixed } = props
 

@@ -36,7 +36,7 @@ function Sidebar(props: SidebarProps) {
   const sidebarBg = useColorModeValue('white', 'navy.800');
 
   return (
-    <Box display={{ sm: 'none', xl: 'block' }} position="fixed" minH="100vh" zIndex="10">
+    <Box display={{ base: 'none', xl: 'block' }} position="fixed" minH="100vh" zIndex="10">
       <Box
         bg={sidebarBg}
         w="290px"
@@ -73,7 +73,7 @@ export function SidebarResponsive(props: SidebarResponsiveProps) {
   const { routes } = props;
 
   return (
-    <Flex display={{ sm: 'flex', xl: 'none' }} alignItems="center">
+    <Flex display={{ base: 'flex', xl: 'none' }} alignItems="center">
       <Flex ref={btnRef} w="max-content" h="max-content" onClick={onOpen}>
         <Icon
           as={IoMenuOutline}

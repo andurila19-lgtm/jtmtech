@@ -21,7 +21,7 @@ export default function RTLLayout(props: RTLLayoutProps) {
 	useEffect(() => {
 		if (!isWindowAvailable()) return;
 		window.document.documentElement.dir = 'rtl';
-	});
+	}, []);
 
 	const { onOpen } = useDisclosure();
 	return (

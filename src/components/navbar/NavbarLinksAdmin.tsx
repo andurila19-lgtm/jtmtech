@@ -66,6 +66,7 @@ export default function HeaderLinks(props: {
       boxShadow={shadow}
       gap={{ base: '6px', md: '10px' }}
     >
+      <SidebarResponsive routes={routes} />
       <Box display={{ base: 'none', md: 'block' }}>
         <SearchBar
           mb={() => {
